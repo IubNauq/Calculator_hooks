@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -37,7 +37,7 @@ function Calculator() {
                 <div className="previous-operand"></div>
                 <div className="current-operand">{result}</div>
             </div>
-            <button className="span-two"
+            <button className="span-two" id="AC"
                     onClick={handleAC}>AC
             </button>
             <button onClick={handleDEL}>DEL</button>
@@ -86,12 +86,13 @@ function Calculator() {
             <button onClick={handleNumOpe}
                     value={'0'}>0
             </button>
-            <button className="span-two"
+            <button className="span-two" id="Equal"
                     onClick={handleEqual}>=
             </button>
         </div>
     );
 }
+
 
 root.render(<Calculator/>);
 
